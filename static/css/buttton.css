@@ -1,0 +1,20 @@
+.buttonOpor {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffc107;
+    border-radius: 5%;
+    text-align: center;
+}
+
+.buttonOpor:hover {
+    background-color: black;
+}
+
+.buttonOpor:hover a {
+    color: white;
+}
+
+.buttonOpor a{
+    text-decoration: none;
+    color: black;
+}

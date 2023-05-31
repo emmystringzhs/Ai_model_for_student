@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>E!Bot</title>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>AnimaForm</title>
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/buttton.css' %}">
+
+    </head>
+
+<body>
+    <div class="error-message">
+        {% if error_message %}
+        {{ error_message }}
+        {% endif %}
+        {% if signup_form_errors %}
+        {% for field in signup_form_errors %}
+        {{ field.errors }}
+        {% endfor %}
+        {% endif %}
+    </div>
+    <!-- partial:index.partial.html -->
+    <section class="forms-section">
+
+        <div class="buttonOpor">
+            <a href="/">
+                <h1 >Return to Homepage</h1>
+            </a>
+        </div>
+
+        <div class="forms">
+            <div class="form-wrapper is-active">
+                <button type="button" class="switcher switcher-login">
+                    Login
+                    <span class="underline"></span>
+                </button>
+                <form action="/signin" method="post" class="form form-login">
+                    {% csrf_token %}
+                    <fieldset>
+                        <legend>Please, enter your email and password for login.</legend>
+                        <div class="input-block">
+                            <label for="login-email">Username</label>
+                            <input id="login-email" name="username" type="text" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="login-password">Password</label>
+                            <input id="login-password" name="login-password" type="password" required>
+                        </div>
+                    </fieldset>
+                    <button type="submit" class="btn-login">Login</button>
+                </form>
+            </div>
+            <div class="form-wrapper">
+                <button type="button" class="switcher switcher-signup">
+                    Sign Up
+                    <span class="underline"></span>
+                </button>
+                <form action="/signup" class="form form-signup" method="post">
+                    {% csrf_token %}
+                    <fieldset>
+                        <legend>Please, enter your email, password and password confirmation for sign up.</legend>
+                        <div class="input-block">
+                            <label for="signup-email">username</label>
+                            <input id="signup-emails" name="signup-username" type="text" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="signup-email">E-mail</label>
+                            <input id="signup-email" name="signup-email" type="email" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="signup-password">Password</label>
+                            <input id="signup-password" name="signup-password" type="password" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="signup-password-confirm">Confirm password</label>
+                            <input id="signup-password-confirm" name="signup-password-confirm" type="password" required>
+                        </div>
+                    </fieldset>
+                    <button type="submit" class="btn-signup" name="btn-signup">Continue</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- partial -->
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+</html>
+
+
+

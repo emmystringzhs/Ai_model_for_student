@@ -1,0 +1,51 @@
+/* primary color of the bot is white */
+body {
+  background-color: white;
+}
+/* minimal use of yellow */
+.navbar {
+  background-color: yellow;
+}
+.logo {
+  display: inline-block;
+  margin: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.nav-option {
+  display: inline-block;
+  margin: 10px;
+  font-size: 18px;
+}
+.chat {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid black;
+  height: 300px;
+  overflow-y: scroll;
+}
+.message {
+  margin-bottom: 10px;
+}
+.user-message {
+  color: blue;
+}
+.bot-message {
+  color: green;
+}
+.input-container {
+  margin-top: 10px;
+}
+input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid black;
+}
+input[type="submit"] {
+  padding: 10px;
+  font-size: 16px;
+  background-color: yellow;
+  border: 1px solid black;
+  cursor: pointer;
+}
